@@ -19,18 +19,18 @@ CREATE Table IF NOT EXISTS employee_with_constraint
      CHECK (salary > 1000) 
 );
 
-INSERT INTO employee_with_constraint VALUES("Tushar", 5000, "2023-01-03");
+INSERT INTO employee_with_constraint VALUES("Tushar", 5000, "2023-01-03"); --- error id should not be null
 
 
-INSERT INTO employee_with_constraint VALUES(null, "Tushar", 5000,"2023-01-03");
+INSERT INTO employee_with_constraint VALUES(null, "Tushar", 5000,"2023-01-03"); --- error id should not be null
 
-INSERT INTO employee_with_constraint VALUES(1, null, 5000, "2023-01-01");
+INSERT INTO employee_with_constraint VALUES(1, null, 5000, "2023-01-01"); --- name should not be null
 
-INSERT INTO employee_with_constraint VALUES(1, "Tushar", 700,"2023-01-01");
+INSERT INTO employee_with_constraint VALUES(1, "Tushar", 700,"2023-01-01"); ---salary violation, salary should be greater than 1000
 
 INSERT INTO employee_with_constraint VALUES(1,"Tushar", 7000,"2023-01-02");
 
-INSERT INTO employee_with_constraint VALUES(1,"Rahul",3000,"2023-02-02");
+INSERT INTO employee_with_constraint VALUES(1,"Rahul",3000,"2023-02-02"); --- id should be unique
 
 ---Primary key and UNIQUE
 ---Primary key will not store null VALUES
@@ -61,3 +61,83 @@ INSERT INTO employee_with_constraint1 VALUES(1,"Vishal",700,"2023-05-01");
 INSERT INTO employee_with_constraint1 VALUES(1,"Vishal", 5000,"2023-07-03");
 
 SELECT * FROM employee_with_constraint1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
