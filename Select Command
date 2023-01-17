@@ -49,6 +49,19 @@ SELECT id,
        (salary + (salary * 0.2)) as new_salary --- salary * 20/100  logic for 20% addition, (salary + (salary * 0.2)) as salary * 1.2
 FROM employee;
 
+SELECT id,
+       emp_name,
+       salary as old_salary,    
+       (salary * 1.2) as new_salary --- salary * 20/100  logic for 20% addition
+FROM employee;
+
+--- Update command
+
+SELECT * FROM employee;
+
+UPDATE employee SET salary = salary * 1.2;
+
+
 
 
 
