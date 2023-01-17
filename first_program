@@ -64,6 +64,44 @@ SELECT * FROM employee_with_constraint1;
 
 
 
+--- Alter Command usage
+
+CREATE DATABASE employee;
+
+CREATE TABLE IF NOT EXISTS employee_details
+(
+    id INT,
+    name VARCHAR(50),
+    address VARCHAR(50),
+    city VARCHAR(50)
+);
+
+INSERT INTO employee_details VALUES(1, "Tushar", "XYZ", "Wani");
+
+SELECT * FROM employee_details;
+
+ALTER TABLE employee_details ADD COLUMN emp_DOB DATE;
+
+INSERT INTO employee_details VALUES(1, "Tushar", "XYZ", "Wani", "1990-07-04");
+
+SHOW CREATE TABLE employee_details;
+
+ALTER Table employee_details MODIFY COLUMN name VARCHAR(100);
+
+ALTER table employee_details DROP COLUMN city;
+
+ALTER table employee_details RENAME COLUMN name to emp_name;
+
+ALTER TABLE employee_details DROP COLUMN DOB;
+
+TRUNCATE TABLE employee_details; --- IT only delete data but not the table structure
+
+DROP TABLE employee_details; --- IT delete everything
+
+
+
+
+
 
 
 
