@@ -99,6 +99,38 @@ TRUNCATE TABLE employee_details; --- IT only delete data but not the table struc
 DROP TABLE employee_details; --- IT delete everything
 
 
+--- apply constraint using alter command
+
+CREATE TABLE if not EXISTS employee
+(
+    id INT,
+    emp_name VARCHAR(50),
+    salary DOUBLE,
+    joining_year DATE
+);
+
+INSERT INTO employee VALUES(1, "Tushar", 9000, "2023-01-01");
+INSERT into employee VALUES(2,"Prasad",5000,"2023-01-02");
+INSERT into employee VALUES(3,"Rahul",4000,"2023-01-03");
+
+SELECT * FROM employee;
+
+ALTER TABLE employee ADD CONSTRAINT unique_id UNIQUE(id);
+
+INSERT into employee VALUES(3,"Vishal",7000,"2023-01-05"); --- add constraint unique hence id should be unique
+
+--- removing constraint using alter coomand
+
+ALTER TABLE employee DROP CONSTRAINT unique_id;
+
+INSERT into employee VALUES(3,"Vishal",7000,"2023-01-05"); 
+
+
+
+
+
+
+
 
 
 
