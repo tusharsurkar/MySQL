@@ -1,0 +1,36 @@
+--- Primary Key
+
+CREATE TABLE person
+(
+    id INT,
+    name VARCHAR(50),
+    salary INT,
+    CONSTRAINT pk PRIMARY KEY (id)
+);
+
+SELECT * FROM person;
+
+INSERT INTO person VALUES(1,"Tushar",7000);
+
+INSERT INTO person VALUES(1,"Prasad",5000); --- Duplicate entry '1' for key 'person.PRIMARY'
+
+INSERT into person VALUES(null,"Rahul",4000); --- Column 'id' cannot be null
+
+--- Foreign Key
+
+CREATE TABLE customer
+(
+    cust_id INT,
+    name VARCHAR(50),
+    age INT,
+    CONSTRAINT pk PRIMARY KEY (cust_id)
+);
+
+CREATE TABLE orders
+(
+    order_id INT,
+    amount INT,
+    customer_id INT,
+    CONSTRAINT pk PRIMARY KEY(order_id),
+    CONSTRAINT fk FOREIGN KEY(customer_id) REFERENCES customer(cust_id) --- syntax to decalre foreign key
+);
