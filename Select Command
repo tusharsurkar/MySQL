@@ -1,0 +1,72 @@
+--- select command
+
+CREATE DATABASE tushar;
+
+CREATE TABLE if not EXISTS employee
+(
+    id INT,
+    emp_name VARCHAR(50),
+    age INT,
+    salary DOUBLE,
+    joining_year DATE
+);
+
+INSERT INTO employee VALUES(1, "Tushar", 32, 9000, "2023-01-01");
+INSERT into employee VALUES(2,"Prasad", 31, 5000,"2023-01-02");
+INSERT into employee VALUES(3,"Rahul", 32, 4000,"2023-01-03");
+
+INSERT into employee VALUES(4,"Vishal", 33, 7000,"2023-01-05");
+
+INSERT into employee VALUES(5,"Anand", 32, 4000,"2023-01-06");
+
+
+SELECT * FROM employee;
+
+SELECT emp_name, id FROM employee;
+
+SELECT emp_name, salary FROM employee;
+
+SELECT id, emp_name AS full_name FROM employee; --- alias to emp_name
+
+SELECT COUNT(*) FROM employee;
+
+SELECT COUNT(*) as total_records FROM employee; --- alias to count function as total_records
+
+SELECT DISTINCT(age) FROM employee; 
+
+SELECT DISTINCT(age) as unique_age FROM employee; --- alias to distinct function as unique_age
+
+SELECT COUNT(DISTINCT(age)) as distinct_age_count FROM employee;
+
+SELECT COUNT(DISTINCT age) as distinct_age_count1 FROM employee;
+
+--- write a query to display employe id, name with the old salary and new salary after 20% bonus addition
+--- output id, name, old_salary, new_salary
+
+SELECT id,
+       emp_name,
+       salary as old_salary,    
+       (salary + (salary * 0.2)) as new_salary --- salary * 20/100  logic for 20% addition
+FROM employee;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
