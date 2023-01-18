@@ -61,6 +61,9 @@ SELECT * FROM employee;
 
 UPDATE employee SET salary = salary * 1.2;
 
+UPDATE employee SET age = 30, joining_year = "2023-01-01";
+
+
 
 
 
