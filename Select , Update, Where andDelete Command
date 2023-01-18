@@ -91,6 +91,27 @@ UPDATE employee SET age = 30, joining_year = "2023-01-01";
 
 ALTER TABLE employee ADD COLUMN city VARCHAR(50);
 
+--- Where command
+
+SELECT * FROM employee WHERE city = "Wani";
+
+UPDATE employee SET city = "Nagpur" WHERE city ="Wani";
+
+
+UPDATE employee SET city ="Wani" WHERE emp_name = "Tushar" or emp_name = "Vishal" or emp_name = "Prasad";
+
+--- Delete Command
+
+DELETE FROM employee where emp_name = "Rahul";
+
+DELETE FROM employee WHERE salary = 4800;
+
+
+
+
+
+
+
 
 
 
