@@ -1,1 +1,83 @@
+CREATE TABLE if not EXISTS employee
+(
+    id INT,
+    emp_name VARCHAR(50),
+    age INT,
+    salary DOUBLE,
+    joining_year DATE,
+    city VARCHAR(50)
+);
+
+INSERT INTO employee VALUES(1, "Tushar", 32, 9000, "2023-01-01", "Nagpur");
+INSERT into employee VALUES(2,"Prasad", 31, 5000,"2023-01-02", "Wani");
+INSERT into employee VALUES(3,"Rahul", 32, 5000,"2023-01-03", "Wani");
+
+INSERT into employee VALUES(4,"Vishal", 33, 7000,"2023-01-05","Wani");
+
+INSERT into employee VALUES(5,"Anand", 32, 4000,"2023-01-06","Nagpur");
+
+SELECT * FROM employee;
+
+SELECT * FROM employee LIMIT 3;  --- limit command
+
+--- ORDER BY
+--- order by command is used to sort data by default in asending order
+--- keyword for asending - ASC and keyword for desending - DESC
+
+
+
+SELECT * FROM employee ORDER BY salary; 
+
+SELECT * FROM employee ORDER BY salary DESC;
+
+SELECT * FROM employee ORDER BY age ASC, salary DESC;
+
+--- write a query to display the details of the employe who is getting max salary
+
+SELECT * FROM employee ORDER BY salary DESC LIMIT 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
