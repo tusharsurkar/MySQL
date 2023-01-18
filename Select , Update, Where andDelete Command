@@ -40,6 +40,8 @@ SELECT COUNT(DISTINCT(age)) as distinct_age_count FROM employee;
 
 SELECT COUNT(DISTINCT age) as distinct_age_count1 FROM employee;
 
+SELECT * FROM employee LIMIT 2;
+
 --- write a query to display employe id, name with the old salary and new salary after 20% bonus addition
 --- output id, name, old_salary, new_salary
 
