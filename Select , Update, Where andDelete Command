@@ -95,6 +95,54 @@ ALTER TABLE employee ADD COLUMN city VARCHAR(50);
 
 --- Where command
 
+CREATE DATABASE tush;
+
+CREATE TABLE if not EXISTS employee
+(
+    id INT,
+    emp_name VARCHAR(50),
+    age INT,
+    salary DOUBLE,
+    joining_year DATE,
+    city VARCHAR(50)
+);
+
+INSERT INTO employee VALUES(1, "Tushar", 32, 9000, "2023-01-01", "Nagpur");
+INSERT into employee VALUES(2,"Prasad", 31, 5000,"2023-01-02", "Wani");
+INSERT into employee VALUES(3,"Rahul", 32, 4000,"2023-01-03", "Wani");
+
+INSERT into employee VALUES(4,"Vishal", 33, 7000,"2023-01-05","Wani");
+
+INSERT into employee VALUES(5,"Anand", 32, 4000,"2023-01-06","Nagpur");
+
+SELECT * FROM employee;
+
+SELECT * FROM employee WHERE salary > 7000;
+SELECT * FROM employee WHERE salary <= 7000;
+SELECT * FROM employee WHERE age != 32;
+SELECT * FROM employee WHERE age <> 32;
+SELECT * FROM employee WHERE salary >=5000 and city = "Wani";
+SELECT * FROM employee WHERE salary <= 5000 or city = "Wani";
+SELECT * FROM employee WHERE salary BETWEEN 5000 and 10000;  --- between command only use with where command to find range syntax : between lower limit and upper limit
+
+--- Regex in SQL
+--- % - means zero or more than zero character
+--- _ - means one CHARACTER
+
+SELECT * FROM employee WHERE age LIKE "32%"; --- like is key word
+
+--- write a query to filter records where name has exactly 5 CHARACTER
+
+SELECT * FROM employee WHERE emp_name LIKE "_____";  --- underscore represent one character, we took 5 underscore
+
+INSERT INTO employee VALUES(6, "Pooja", 29, NULL, "2023-01-01", "Pune");
+INSERT INTO employee VALUES(7, "Priya", 29, 10000, "2023-01-01", NULL);
+
+SELECT * FROM employee;
+
+SELECT * FROM employee WHERE salary IS NULL;
+SELECT * FROM employee WHERE salary IS NOT NULL;
+
 SELECT * FROM employee WHERE city = "Wani";
 
 UPDATE employee SET city = "Nagpur" WHERE city ="Wani";
