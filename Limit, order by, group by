@@ -1,0 +1,149 @@
+CREATE TABLE if not EXISTS employee
+(
+    id INT,
+    emp_name VARCHAR(50),
+    age INT,
+    salary DOUBLE,
+    joining_year DATE,
+    city VARCHAR(50)
+);
+
+INSERT INTO employee VALUES(1, "Tushar", 32, 9000, "2023-01-01", "Nagpur");
+INSERT into employee VALUES(2,"Prasad", 31, 5000,"2023-01-02", "Wani");
+INSERT into employee VALUES(3,"Rahul", 32, 5000,"2023-01-03", "Wani");
+
+INSERT into employee VALUES(4,"Vishal", 33, 7000,"2023-01-05","Wani");
+
+INSERT into employee VALUES(5,"Anand", 32, 4000,"2023-01-06","Nagpur");
+
+SELECT * FROM employee;
+
+SELECT * FROM employee LIMIT 3;  --- limit command
+
+--- ORDER BY
+--- order by command is used to sort data by default in asending order
+--- keyword for asending - ASC and keyword for desending - DESC
+
+
+
+SELECT * FROM employee ORDER BY salary; 
+
+SELECT * FROM employee ORDER BY salary DESC;
+
+SELECT * FROM employee ORDER BY age ASC, salary DESC;
+
+--- write a query to display the details of the employe who is getting max salary
+
+SELECT * FROM employee ORDER BY salary DESC LIMIT 1;
+
+--- Group by
+# Table and Data for Group By
+create table orders_data
+(
+ cust_id int,
+ order_id int,
+ country varchar(50),
+ state varchar(50)
+);
+
+
+insert into orders_data values(1,100,'USA','Seattle');
+insert into orders_data values(2,101,'INDIA','UP');
+insert into orders_data values(2,103,'INDIA','Bihar');
+insert into orders_data values(4,108,'USA','WDC');
+insert into orders_data values(5,109,'UK','London');
+insert into orders_data values(4,110,'USA','WDC');
+insert into orders_data values(3,120,'INDIA','AP');
+insert into orders_data values(2,121,'INDIA','Goa');
+insert into orders_data values(1,131,'USA','Seattle');
+insert into orders_data values(6,142,'USA','Seattle');
+insert into orders_data values(7,150,'USA','Seattle');
+
+SELECT * FROM orders_data;
+
+--- find total order palced within the each country
+
+SELECT 
+country,
+count(*) as country_wise_data
+FROM orders_data
+GROUP BY country;
+
+SELECT * FROM employee;
+UPDATE employee SET salary = 8000 WHERE emp_name = "Pooja";
+UPDATE employee SET city = "Pune" WHERE emp_name = "Priya";
+
+SELECT age,
+       SUM(salary) as age_groupby_totalsalary
+FROM employee
+GROUP BY age;
+
+SELECT age,
+       MIN(salary) as min_salary_age_group,
+       MAX(salary) as max_salary_age_group,
+       AVG(salary) as avg_salary_age_group,
+       COUNT(*) as Total_emp_age_group
+FROM employee GROUP BY age;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
