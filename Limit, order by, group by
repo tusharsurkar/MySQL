@@ -69,6 +69,9 @@ count(*) as country_wise_data
 FROM orders_data
 GROUP BY country;
 
+INSERT INTO employee VALUES(6, "Pooja", 29, NULL, "2023-01-10", "Pune");
+INSERT INTO employee VALUES(7, "Priya", 29, 9000, "2023-01-01", NULL);
+
 SELECT * FROM employee;
 UPDATE employee SET salary = 8000 WHERE emp_name = "Pooja";
 UPDATE employee SET city = "Pune" WHERE emp_name = "Priya";
@@ -84,6 +87,13 @@ SELECT age,
        AVG(salary) as avg_salary_age_group,
        COUNT(*) as Total_emp_age_group
 FROM employee GROUP BY age;
+
+SELECT * FROM orders_data;
+
+SELECT country, state, COUNT(*) as state_wise_orders
+FROM orders_data
+GROUP BY country, state
+ORDER BY country;
 
 
 
