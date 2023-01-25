@@ -96,6 +96,125 @@ GROUP BY country, state
 ORDER BY country;
 
 
+--- Having command
+--- only can be use with group by command
+SELECT country,
+       state,
+       COUNT(*) AS state_wise_orders
+FROM orders_data
+GROUP BY country, state
+HAVING COUNT(*) = 1
+ORDER BY country;
+
+--- Group concat
+
+SELECT 
+country,
+GROUP_CONCAT(state) AS State_name,
+COUNT(*) AS Total_no_state
+FROM orders_data
+GROUP BY country;
+
+--- distinct values in group concat using distinct key word
+SELECT
+country,
+GROUP_CONCAT(DISTINCT state) as dist_state,
+COUNT(*) as Total_states
+FROM orders_data
+GROUP BY country;
+
+--- sorting state in ascending order in group concat using order by and asc keyword
+SELECT
+country,
+GROUP_CONCAT(DISTINCT state ORDER BY state ASC) AS dist_state_in_ASCorder,
+COUNT(*) AS country_wise_order
+FROM orders_data
+GROUP BY country;
+
+--- adding delimeter using seperator " delimeter " keyword
+SELECT
+country,
+GROUP_CONCAT(DISTINCT state ORDER BY state ASC SEPARATOR " - ") AS state_order_using_delimeter,
+COUNT(*) AS country_wise_order
+FROM orders_data
+GROUP BY country;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
