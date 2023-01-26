@@ -140,6 +140,32 @@ FROM orders_data
 GROUP BY country;
 
 
+CREATE TABLE employee
+(id INT,
+ name VARCHAR(50),
+ salary DOUBLE);
+
+ INSERT INTO employee VALUES(1,"Tushar",10000),(2,"Priya",7000),(3,"Pooja",5000),(4,"Prasad",9000),
+                            (5,"Rahul",6000),(6,"Mona",4000),(7,"Sam",3000),(8,"Tina",5500);
+SELECT * FROM employee;
+--- Write a query where salary is greater than Pooja
+--- Sub query
+
+SELECT * FROM employee WHERE salary > 5000;  --- hard coded
+SELECT * FROM employee WHERE salary > (SELECT salary FROM employee WHERE name = "Pooja"); --- sub query
+
+--- in and not in command
+--- Write a query to find orders which were placed in seattle or goa
+
+SELECT * FROM orders_data;
+
+SELECT * FROM orders_data WHERE state ="Seattle" or state = "Goa" ;
+
+SELECT * FROM orders_data WHERE state IN ("Seattle", "Goa");  --- in command
+
+SELECT * FROM orders_data WHERE state NOT IN("Seattle", "Goa"); --- not in command
+
+
 
 
 
