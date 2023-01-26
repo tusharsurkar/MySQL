@@ -166,139 +166,20 @@ SELECT * FROM orders_data WHERE state IN ("Seattle", "Goa");  --- in command
 SELECT * FROM orders_data WHERE state NOT IN("Seattle", "Goa"); --- not in command
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+--- Drive new column to print country is in which continent 
+SELECT 
+*,
+CASE when country = "USA" then "America"
+     when country = "India" then "Asia"
+     when country = "UK" then "Europe"
+     END as Continent
+FROM orders_data;
+
+SELECT 
+*,
+CASE when country = "USA" then "America"
+     when country = "India" then "Asia"
+     else "Europe" END as Continent
+FROM orders_data;
 
 
